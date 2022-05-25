@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ Route::get('/', function () {
     return view('admin.dashboard');
 })->name('dashboard');
 
-Route::get('/locations', function () {
-    return view('locations.locations');
-})->name('location-home');
+Route::get('/locations',[LocationsController::class,'home'])->name('location-home');
+Route::post('/locations/create',[LocationsController::class,'addLocation'])->name('location-create');
+Route::put('/locations/{id}/edit',[LocationsController::class,'editLocation'])->name('location-edit');
+/* Deleting the location with the id of `{id}` */
+Route::delete('/locations/{id}/delete',[LocationsController::class,'deleteLocation'])->name('location-delete');

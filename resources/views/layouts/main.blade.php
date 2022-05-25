@@ -6,10 +6,9 @@
 		<meta charset="UTF-8">
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
-		<meta name="Author" content="Spruko Technologies Private Limited">
-		<meta name="Keywords" content="CodeIgniter Admin & Dashboard Template, Codeigniter Admin Template, Codeigniter admin panel, Codeigniter Bootstrap 5, Codeigniter admin template Bootstrap 5, Codeigniter Templates Using Bootstrap Admin, codeigniter admin, codeigniter dashboard, Admin & Dashboard Template, admin template, admin dashboard, admin panel, Bootstrap 5 admin template"/>
-		<!-- Title -->
+		<meta name="Description" content="Fleet Management System">
+		<meta name="Author" content="Fleet Management System">
+		<meta name="Keywords" content=""/>
 		<title>@yield('name',"VMS")</title>
         		<!-- Favicon -->
 		<link rel="icon" href="assets/img/brand/favicon.png" type="image/x-icon"/>
@@ -141,7 +140,7 @@
 								</li>
 								<li class="side-item side-item-category">ADMIN OPERATIONS</li>
 								<li class="slide">
-									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fe fe-map-pin">&NonBreakingSpace;</i><span class="side-menu__label">Locations </span></a>
+									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="{{route('location-home')}}"><i class="fe fe-map-pin">&NonBreakingSpace;</i><span class="side-menu__label">Locations </span></a>
 								</li>
 
 								<li class="slide">
@@ -219,12 +218,12 @@
 						<div class="left-content">
 						  <span class="main-content-title mg-b-0 mg-b-lg-1">@yield('title','vms')</span>
 						</div>
-						<div class="justify-content-center mt-2">
+						{{-- <div class="justify-content-center mt-2">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item tx-15"><a href="javascript:void(0);">Pages</a></li>
 								<li class="breadcrumb-item active" aria-current="page">Empty Page</li>
 							</ol>
-						</div>
+						</div> --}}
 					</div>
 					<!-- /breadcrumb -->
 
@@ -232,11 +231,7 @@
 					<div class="row">
 						<div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
 							<div class="card">
-								<div class="card-body">
-									<div>
-										<h6>Type text here.....</h6>
-									</div>
-								</div>
+								@yield('content')
 							</div>
 						</div>
 					</div>
@@ -269,22 +264,22 @@
 		<!-- Moment js -->
 		<script src="assets/plugins/moment/moment.js"></script>
 		<!-- P-scroll js -->
-		<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+		{{-- <script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script> --}}
 		<!-- eva-icons js -->
 		<script src="assets/js/eva-icons.min.js"></script>
 		<!-- Sidebar js -->
 		<script src="assets/plugins/side-menu/sidemenu.js"></script>
+		{{-- sweet Alert --}}
+		<script src="assets/plugins/sweet-alert/sweetalert.min.js"></script>
+		<script src="assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
 		<!-- Sticky js -->
 		<script src="assets/js/sticky.js"></script>
-		<!-- Right-sidebar js -->
-		<script src="assets/plugins/sidebar/sidebar.js"></script>
-		<script src="assets/plugins/sidebar/sidebar-custom.js"></script>
 		<!-- Theme Color js -->
 		<script src="assets/js/themecolor.js"></script>
 		<!-- custom js -->
 		<script src="assets/js/custom.js"></script>
 		<!-- Switcher js -->
-		<script src="assets/switcher/js/switcher.js"></script>
+		{{-- <script src="assets/switcher/js/switcher.js"></script> --}}
 	</body>
 </html>
