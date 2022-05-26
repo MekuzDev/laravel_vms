@@ -9,4 +9,9 @@ class Location extends Model
 {
     use HasFactory;
     protected $fillable = ['location_name'];
+
+    public function vehicleUsers()
+    {
+      return  $this->hasMany(VehicleUser::class);
+    }
 }

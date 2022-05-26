@@ -144,7 +144,7 @@
 								</li>
 
 								<li class="slide">
-									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fe fe-user"></i>&nbsp;<span class="side-menu__label">Vehicle Users</span></a>
+									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="{{route('vuser-home')}}"><i class="fe fe-user"></i>&nbsp;<span class="side-menu__label">Vehicle Users</span></a>
 								</li>
 								
 								

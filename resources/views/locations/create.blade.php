@@ -1,4 +1,4 @@
-<div class="modal fade @error('location_name') show @enderror " id="modaldemo2" style="display:@error('location_name') block @else none @enderror;" aria-hidden="true">
+<div class="modal fade" id="addLocationModal" style="display:none;" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,24 +7,20 @@
                 <form action="{{route('location-create')}}" method="post">
                     @csrf
                     <div class="modal-body">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1"><i class="fe fe-map-pin"></i></span>
-                            <input aria-describedby="basic-addon1" name='location_name' 
-                           
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1"><i class="fe fe-map-pin"></i></span>
+                                <input aria-describedby="basic-addon1" name='location_name' aria-label="Location" value ="" class="form-control" placeholder="Enter location" type="text">
+                            </div>
                             
-                            aria-label="Location" value =" @error('location_name'){{old('location_name')}} @enderror" class="form-control" placeholder="Enter location" type="text">
-                          
                         </div>
-                        @error('location_name')
-                        <small class="text-danger">{{ucwords($message)}}</small>
-                        @enderror
+                      
                     </div>
                     <div class="modal-footer justify-content-center">
                         <button class="btn ripple btn-primary" type="submit">Save</button>
                         <button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
                     </div>
                 </form>
-
         </div>
     </div>
 </div>

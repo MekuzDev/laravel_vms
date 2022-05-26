@@ -13,8 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
+        /* Creating a table called vehicle_users with the following columns:
+        - id
+        - fullname
+        - location_id
+        - created_at
+        - updated_at */
         Schema::create('vehicle_users', function (Blueprint $table) {
             $table->id();
+            $table->string('fullname',255);
+           /* Creating a foreign key constraint on the location_id column. */
+            $table->foreignId('location_id')->constrained('locations','id')->onDelete('cascade');
             $table->timestamps();
         });
     }

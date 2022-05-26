@@ -122,7 +122,7 @@ $(function(e) {
 	deleteForm.addEventListener('submit',function(e) {
 		e.preventDefault();
 	})
-	document.querySelectorAll('.delete-location').forEach((button)=>{
+	document.querySelectorAll('.delete-btn').forEach((button)=>{
 		button.addEventListener('click',function (e) {
 			e.preventDefault()
 			var deleteLink = this.getAttribute('href');

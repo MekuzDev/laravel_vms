@@ -17,7 +17,7 @@ class LocationsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('locations')->truncate();
+        // DB::table('locations')->truncate();
         $locations = [];
         $faker = Faker::create();
         foreach (range(1,10) as  $index) {

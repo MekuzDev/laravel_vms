@@ -30,12 +30,12 @@ class LocationsController extends Controller
     public function editLocation(Request $request,$id)
     {
         $request->validate([
-            'location_name'=> 'required|unique:locations'
+            'location_name_update'=> 'required|unique:locations,location_name,'.$id
         ]);
 
         $location = Location::findOrFail($id);
         $location->update([
-            'location_name'=>$request->location_name
+            'location_name'=>$request->location_name_update
         ]);
        
         return redirect(route('location-home'))->with('message','location updated');
