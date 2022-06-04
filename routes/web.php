@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocationsController;
+use App\Http\Controllers\VehicleTypesController;
 use App\Http\Controllers\VehicleUSersController;
+use App\Http\Controllers\VehicleStatusController;
+use App\Http\Controllers\VregController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +35,21 @@ Route::put('/vusers/{id}/edit',[VehicleUSersController::class,'editvuser'])->nam
 Route::delete('/vusers/{id}/delete',[VehicleUSersController::class,'deletevuser'])->name('vuser-delete');
 
 // Vehicle Status
+Route::get('/vstatus',[VehicleStatusController::class,'home'])->name('vstatus-home');
+Route::post('/vstatus/create',[VehicleStatusController::class,'createvstatus'])->name('vstatus-create');
+Route::put('/vstatus/{id}/edit',[VehicleStatusController::class,'editvstatus'])->name('vstatus-edit');
+Route::delete('/vstatus/{id}/delete',[VehicleStatusController::class,'deletevstatus'])->name('vstatus-delete');
 
+// Vehicle Models Routes
+Route::get('/vmodel',[VehicleTypesController::class,'home'])->name('vmodel-home');
+Route::post('/vmodel/create',[VehicleTypesController::class,'createvmodel'])->name('vmodel-create');
+Route::put('/vmodel/{id}/edit',[VehicleTypesController::class,'editvmodel'])->name('vmodel-edit');
+Route::delete('/vmodel/{id}/delete',[VehicleTypesController::class,'deletevmodel'])->name('vmodel-delete');
+
+
+// Vehicle Registration Routes
+Route::get('/vreg',[VregController::class,'home'])->name('vreg-home');
+Route::get('/vreg/create',[VregController::class,'create'])->name('vreg-create');
+Route::post('/vreg/create',[VregController::class,'store'])->name('vreg-create');
+Route::get('/vreg/{regValue}/update',[VregController::class,'updateVreg'])->name('vreg-update');
+Route::put('/vreg/{regValue}/update',[VregController::class,'storeVregUpdate'])->name('store-update-store');

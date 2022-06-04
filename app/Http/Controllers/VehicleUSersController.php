@@ -37,7 +37,8 @@ class VehicleUSersController extends Controller
       ]);
       $vuser = VehicleUser::findOrFail($id);
       $vuser->update([
-          'fullname'=>$request->fullname_update
+          'fullname'=>$request->fullname_update,
+          'location_id'=>$request->location_update
       ]);
 
       return redirect(route('vuser-home'))->with('message','Vehicle user updated...');

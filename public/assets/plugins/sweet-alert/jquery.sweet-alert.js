@@ -1,174 +1,50 @@
 $(function(e) {
-	
-	// //Basic
-	// $('#swal-basic').on('click', function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal('Welcome to Your Admin Page')
-	// });
-	
-	// //A title with a text under
-	// $('#swal-title').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal(
-	// 		{
-	// 			title: 'Here is  a title!',
-	// 			text: 'All are available in the template',
-	// 		}
-	// 	)
-	// });
-	
-	// //Success Message
-	// $('#swal-success').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal(
-	// 		{
-	// 			title: 'Well done!',
-	// 			text: 'You clicked the button!',
-	// 			type: 'success',
-	// 			confirmButtonColor: '#57a94f'
-	// 		}
-	// 	)
-	// });
-	
-	// //Warning Message
-	// $('#swal-warning').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal({
-	// 	  title: "Are you sure?",
-	// 	  text: "Your will not be able to recover this imaginary file!",
-	// 	  type: "warning",
-	// 	  showCancelButton: true,
-	// 	  confirmButtonClass: "btn btn-danger",
-	// 	  confirmButtonText: "Yes, delete it!",
-	// 	  closeOnConfirm: false
-	// 	},
-	// 	function(){
-	// 	  swal("Deleted!", "Your imaginary file has been deleted.", "success");
-	// 	});
-	// });
-	
-	// //Parameter
-	// $('#swal-parameter').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal({
-	// 	  title: "Are you sure?",
-	// 	  text: "You will not be able to recover this imaginary file!",
-	// 	  type: "warning",
-	// 	  showCancelButton: true,
-	// 	  confirmButtonClass: "btn-danger",
-	// 	  confirmButtonText: "Yes, delete it!",
-	// 	  cancelButtonText: "No, cancel plx!",
-	// 	  closeOnConfirm: false,
-	// 	  closeOnCancel: false
-	// 	},
-	// 	function(isConfirm) {
-	// 	  if (isConfirm) {
-	// 		swal("Deleted!", "Your imaginary file has been deleted.", "success");
-	// 	  } else {
-	// 		swal("Cancelled", "Your imaginary file is safe :)", "error");
-	// 	  }
-	// 	});
-	// });
-	
-	// //Custom Image
-	// $('#swal-image').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal({
-	// 		title: 'Lovely!',
-	// 		text: 'your image is uploaded.',
-	// 		imageUrl: 'https://codeigniter.spruko.com/nowa/nowa_demo/assets/img/faces/6.jpg',
-	// 		animation: false,
-	// 	})
-	// });
-	
-	// //Auto Close Timer
-	// $('#swal-timer').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal({
-	// 		title: 'Auto close alert!',
-	// 		text: 'I will close in 1 seconds.',
-	// 		timer: 1000
-	// 	})?.then(
-	// 		function () {
-	// 		},
-	// 		// handling the promise rejection
-	// 		function (dismiss) {
-	// 			if (dismiss === 'timer') {
-	// 				console.log('I was closed by the timer')
-	// 			}
-	// 		}
-	// 	)
-	// });
-	
-	
-	// //Ajax with Loader Alert
-	// $('#swal-ajax').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal({
-	// 	  title: "Ajax request example",
-	// 	  text: "Submit to run ajax request",
-	// 	  type: "info",
-	// 	  showCancelButton: true,
-	// 	  closeOnConfirm: false,
-	// 	  showLoaderOnConfirm: true
-	// 	}, function () {
-	// 	  setTimeout(function () {
-	// 		swal("Ajax request finished!");
-	// 	  }, 2000);
-	// 	});
-	// });
 
-	var deleteForm = document.querySelector('#delete-form')
-	deleteForm.addEventListener('submit',function(e) {
-		e.preventDefault();
-	})
-	document.querySelectorAll('.delete-btn').forEach((button)=>{
-		button.addEventListener('click',function (e) {
+
+	var deletebtn = document.querySelectorAll('.delete-btn');
+
+
+	deletebtn.forEach(function(btn){
+		btn.addEventListener('click',function(e){
 			e.preventDefault()
-			var deleteLink = this.getAttribute('href');
+			var href =  btn.getAttribute('href');
 			$('body').removeClass('timer-alert');
-				swal({
-				  title: "Are you sure?",
-				  text: "NB: record can't be reversed after deletion!",
-				  type: "warning",
-				  showCancelButton: true,
-				  confirmButtonClass: "#8CD4F5",
-				  confirmButtonText: "Yes, Continue",
-				  cancelButtonText: "No, cancel",
-				  closeOnConfirm: false,
-				  closeOnCancel: true
-				},
-				function() {
-					  deleteForm.setAttribute('action',deleteLink)
-					  deleteForm.submit()
-					swal("Deleted!","Location Deleted..", "success");
-				});
-			})
+		swal({
+		  title: "Are you sure?",
+		  text: "NB: Deletion of this record might affect related tables",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonClass: "btn btn-danger",
+		  confirmButtonText: "Yes, delete it!",
+		  closeOnConfirm: false
+		},
+		function(){
+		   var deleteForm = document.getElementById('delete-form')
+		   deleteForm.setAttribute('action',href)
+		   deleteForm.submit();
+		  swal("Deleted!", "please wait while page redirects", "success");
+		});
+		})
 	})
 
+	// Datepicker
+	$('.fc-datepicker').datepicker({
+		showOtherMonths: true,
+		selectOtherMonths: true
+	});
 
-	// $('.delete-location').click(function () {
-	// 	$('body').removeClass('timer-alert');
-	// 	swal({
-	// 	  title: "Are you sure?",
-	// 	  text: "You will not be able to recover this imaginary file!",
-	// 	  type: "warning",
-	// 	  showCancelButton: true,
-	// 	  confirmButtonClass: "btn-danger",
-	// 	  confirmButtonText: "Yes, delete it!",
-	// 	  cancelButtonText: "No, cancel plx!",
-	// 	  closeOnConfirm: false,
-	// 	  closeOnCancel: false
-	// 	},
-	// 	function(isConfirm) {
-	// 	  if (isConfirm) {
-	// 		swal("Deleted!", "Your imaginary file has been deleted.", "success");
-	// 	  } else {
-	// 		swal("Cancelled", "Your imaginary file is safe :)", "error");
-	// 	  }
-	// 	});
-	// });
+	var datePicker = document.getElementById('datepicker-date')
 
 
-	
-});
+
+	//Date picker
+	$('#datepicker-date').bootstrapdatepicker({
+		format: "dd-mm-yyyy",
+		viewMode: "date",
+		multidate: false,
+		multidateSeparator: "-",
+		todayHighlight: true,
+		startDate: '01-01-1910',
+		endDate :'0d'
+	})
+})	

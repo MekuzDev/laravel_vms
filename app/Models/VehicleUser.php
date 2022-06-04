@@ -13,8 +13,11 @@ class VehicleUser extends Model
 
     public function location()
     {
-        
       /* A relationship between the VehicleUser and Location model. */
        return $this->belongsTo(Location::class);
+    }
+
+    public function vreg (){
+      return $this->hasOne(VehicleRegistration::class);
     }
 }

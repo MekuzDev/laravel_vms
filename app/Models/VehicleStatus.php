@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleStatus extends Model
 {
     use HasFactory;
+    protected $fillable = ['status'];
+
+    function vreg (){
+        return $this->hasMany(VehicleRegistration::class);
+    }
 }

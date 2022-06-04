@@ -11,29 +11,29 @@
 		<meta name="Keywords" content=""/>
 		<title>@yield('name',"VMS")</title>
         		<!-- Favicon -->
-		<link rel="icon" href="assets/img/brand/favicon.png" type="image/x-icon"/>
+		<link rel="icon" href="{{asset('assets/img/brand/favicon.png')}}" type="image/x-icon"/>
 		<!-- Icons css -->
-		<link href="assets/css/icons.css" rel="stylesheet">
+		<link href="{{asset('assets/css/icons.css')}}" rel="stylesheet">
 		<!--  bootstrap css-->
-		<link id="style" href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link id="style" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
 		<!--- Style css --->
-		<link href="assets/css/style.css" rel="stylesheet">
-		<link href="assets/css/style-dark.css" rel="stylesheet">
-		<link href="assets/css/style-transparent.css" rel="stylesheet">
+		<link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/style-dark.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/style-transparent.css')}}" rel="stylesheet">
 		<!---Skinmodes css-->
-		<link href="assets/css/skin-modes.css" rel="stylesheet" />
+		<link href="{{asset('assets/css/skin-modes.css')}}" rel="stylesheet" />
 		<!--- Animations css-->
-		<link href="assets/css/animate.css" rel="stylesheet">
+		<link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
 
-	    <!-- INTERNAL Switcher css -->
-		<link href="assets/switcher/css/switcher.css" rel="stylesheet"/>
-		<link href="assets/switcher/demo.css" rel="stylesheet"/>
+	   <!-- INTERNAL Switcher css -->
+		<link href="{{asset('assets/switcher/css/switcher.css')}}{{asset('" rel="stylesheet"/>
+		<l')}}ink href="{{asset('assets/switcher/demo.css')}}" rel="stylesheet"/>
 	</head>
 
 	<body class="ltr main-body app sidebar-mini">
     		<!-- Loader -->
 		<div id="global-loader">
-			<img src="assets/img/loader.svg" class="loader-img" alt="Loader">
+			<img src="{{asset('assets/img/loader.svg')}}" class="loader-img" alt="Loader">
 		</div>
 		<!-- /Loader -->
 
@@ -56,8 +56,8 @@
 							</div>
 							<div class="logo-horizontal">
 								<a href="{{url('/')}}" class="header-logo">
-									<img src="assets/images/logo-01.png" class="mobile-logo logo-1" alt="logo">
-									<img src="assets/images/logo-02.png" class="mobile-logo dark-logo-1" alt="logo">
+									<img src="{{asset('assets/images/logo-01.png')}}" class="mobile-logo logo-1" alt="logo">
+									<img src="{{asset('assets/images/logo-02.png')}}" class="mobile-logo dark-logo-1" alt="logo">
 								</a>
 							</div>
 							<div class="main-header-center ms-4 d-sm-none d-md-none d-lg-block form-group">
@@ -97,11 +97,11 @@
 											</form>
 										</li>
 										<li class="dropdown main-profile-menu nav nav-item nav-link ps-lg-2">
-											<a class="new nav-link profile-user d-flex" href="#" data-bs-toggle="dropdown"><img alt="" src="assets/img/faces/2.jpg" class=""></a>
+											<a class="new nav-link profile-user d-flex" href="#" data-bs-toggle="dropdown"><img alt="" src="{{asset('assets/img/faces/2.jpg')}}" class=""></a>
 											<div class="dropdown-menu">
 												<div class="menu-header-content p-3 border-bottom">
 													<div class="d-flex wd-100p">
-														<div class="main-img-user"><img alt="" src="assets/img/faces/2.jpg" class=""></div>
+														<div class="main-img-user"><img alt="" src="{{asset('assets/img/faces/2.jpg')}}" class=""></div>
 														<div class="ms-3 my-auto">
 															<h6 class="tx-15 font-weight-semibold mb-0">Teri Dactyl</h6><span class="dropdown-title-text subtext op-6  tx-12">Premium Member</span>
 														</div>
@@ -125,10 +125,10 @@
 					<aside class="app-sidebar">
 						<div class="main-sidebar-header active">
 							<a class="header-logo active" href="index.html">
-								<img src="assets/images/logo-01.png" class="main-logo  desktop-logo" alt="logo">
-								<img src="assets/images/logo-01.png" class="main-logo  desktop-dark" alt="logo">
-								<img src="assets/images/logo-02.png" class="main-logo  mobile-logo" alt="logo">
-								<img src="assets/images/logo-02.png" class="main-logo  mobile-dark" alt="logo">
+								<img src="{{asset('assets/images/logo-01.png')}}" class="main-logo  desktop-logo" alt="logo">
+								<img src="{{asset('assets/images/logo-01.png')}}" class="main-logo  desktop-dark" alt="logo">
+								<img src="{{asset('assets/images/logo-02.png')}}" class="main-logo  mobile-logo" alt="logo">
+								<img src="{{asset('assets/images/logo-02.png')}}" class="main-logo  mobile-dark" alt="logo">
 							</a>
 						</div>
 						<div class="main-sidemenu">
@@ -149,17 +149,17 @@
 								
 								
 								<li class="slide">
-									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fe fe-activity">&nbsp;</i><span class="side-menu__label">Vehicle Status </span></a>
+									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="{{route('vstatus-home')}}"><i class="fe fe-activity">&nbsp;</i><span class="side-menu__label">Vehicle Status </span></a>
 								</li>
 								
 								
 								<li class="slide">
-									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fe fe-arrow-right"></i>&nbsp;<span class="side-menu__label">Vehicle Models </span></a>
+									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="{{route('vmodel-home')}}"><i class="fe fe-arrow-right"></i>&nbsp;<span class="side-menu__label">Vehicle Models </span></a>
 								</li>
 								
 								
 								<li class="slide">
-									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fe fe-arrow-right"></i>&nbsp;<span class="side-menu__label">Register Vehicles</span></a>
+									<a class="side-menu__item side-menu__item" data-bs-toggle="slide" href="{{route('vreg-home')}}"><i class="fe fe-arrow-right"></i>&nbsp;<span class="side-menu__label">Register Vehicles</span></a>
 								</li>
 								
 								
@@ -257,29 +257,35 @@
 				<!-- Back-to-top -->
 		<a href="#top" id="back-to-top"><i class="las la-arrow-up"></i></a>
 		<!-- JQuery min js -->
-		<script src="assets/plugins/jquery/jquery.min.js"></script>
+		<script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 		<!-- Bootstrap js -->
-		<script src="assets/plugins/bootstrap/js/popper.min.js"></script>
-		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="{{asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+		<!--Internal  pickerjs js -->
+		<script src="{{asset('assets/plugins/pickerjs/picker.min.js')}}"></script>
+		<!--Internal  Datepicker js -->
+		<script src="{{asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>
+		<!--Bootstrap-datepicker js-->
+		<script src="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
 		<!-- Moment js -->
-		<script src="assets/plugins/moment/moment.js"></script>
+		<script src="{{asset('assets/plugins/moment/moment.js')}}"></script>
 		<!-- P-scroll js -->
-		{{-- <script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script> --}}
+		<script src="{{asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/perfect-scrollbar/p-scroll.js')}}"></script>
 		<!-- eva-icons js -->
-		<script src="assets/js/eva-icons.min.js"></script>
+		<script src="{{asset('assets/js/eva-icons.min.js')}}"></script>
 		<!-- Sidebar js -->
-		<script src="assets/plugins/side-menu/sidemenu.js"></script>
+		<script src="{{asset('assets/plugins/side-menu/sidemenu.js')}}"></script>
 		{{-- sweet Alert --}}
-		<script src="assets/plugins/sweet-alert/sweetalert.min.js"></script>
-		<script src="assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
+		<script src="{{asset('assets/plugins/sweet-alert/sweetalert.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/sweet-alert/jquery.sweet-alert.js')}}"></script>
 		<!-- Sticky js -->
-		<script src="assets/js/sticky.js"></script>
+		<script src="{{asset('assets/js/sticky.js')}}"></script>
 		<!-- Theme Color js -->
-		<script src="assets/js/themecolor.js"></script>
+		<script src="{{asset('assets/js/themecolor.js')}}"></script>
 		<!-- custom js -->
-		<script src="assets/js/custom.js"></script>
+		<script src="{{asset('assets/js/custom.js')}}"></script>
 		<!-- Switcher js -->
-		{{-- <script src="assets/switcher/js/switcher.js"></script> --}}
+		<script src="{{asset('assets/switcher/js/switcher.js')}}"></script>
 	</body>
 </html>

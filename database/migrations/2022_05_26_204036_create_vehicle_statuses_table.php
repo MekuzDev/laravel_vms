@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('vehicle_statuses', function (Blueprint $table) {
             $table->id();
+            $table->string('status','200')->unique();
             $table->timestamps();
         });
     }

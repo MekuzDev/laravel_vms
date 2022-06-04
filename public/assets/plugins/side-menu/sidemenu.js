@@ -31,10 +31,10 @@
 	$(window).resize(toggleSidebar);
 
 	//p-scroll
-	// const ps1 = new PerfectScrollbar('.app-sidebar', {
-	// 	useBothWheelAxes: true,
-	// 	suppressScrollX: true,
-	// });
+	const ps1 = new PerfectScrollbar('.app-sidebar', {
+		useBothWheelAxes: true,
+		suppressScrollX: true,
+	});
 
 
 
